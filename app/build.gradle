@@ -14,28 +14,6 @@ android {
                 systemImageSource = "google"
                 abi = "x86"
             }
-
-            pixel9api29(com.android.build.api.dsl.ManagedVirtualDevice) {
-                device = "Pixel 2"
-                apiLevel = 29
-                systemImageSource = "google"
-                abi = "x86"
-            }
-        }
-        deviceGroups {
-            phonesAndTablet {
-                targetDevices.addAll(devices.nexus9api30, devices.pixel9api29)
-            }
-        }
-        emulatorSnapshots {
-            // Enables the feature
-            enableForTestFailures true
-            // The number of snapshots to take during a test run. When not
-            // specified, the default value is 2. After reaching the max number
-            // of snapshots, subsequent assertion failures in a test run do not
-            // generate additional snapshots. Keep in mind, snapshots can consume
-            // a significant amount of disk space.
-            maxSnapshotsForTestFailures 2
         }
     }
     defaultConfig {
